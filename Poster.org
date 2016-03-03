@@ -1,0 +1,219 @@
+#+DATE:Time-stamp: <2011-07-23 08:29>    
+
+#+TITLE: Poster
+#+AUTHOR: Henri-Paul Indiogine
+#+EMAIL: hindiogine@gmail.com
+
+#+OPTIONS: f=t todo=nil <:nil d:nil LaTeX:t timestamp:t tags:nil
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LaTeX_CLASS: book
+#+LANGUAGE: en
+#+TODO: TODO(t) STRT(s) WAIT(w) ONGO(o) | DONE(d) CNLD(c) 
+#+TAGS: GENERAL(g) DISS(d) TAMU(u) EMACS(e) FIN(f) BAHAI(b) PERS(p) VANG(v) TUTOR(t)
+#+PROPERTY: Effort_All 0.00 0.50 1.00 1.50 2.00 2.50 3.00    
+#+COLUMNS: %25ITEM %TAGS %PRIORITY %Effort{+}
+
+* Submission
+
+Division L : Educational policy and politics
+Section 5  : Accountability policy
+
+* Title
+[Type title as it should appear in the Program (limit to fifteen words). The session title should be entered with proper capitalization: Make Sure That the First Letter of Each Appropriate Word Is Capitalized.]
+
+Text Mining U.S. Government Documents for Discourse Analysis of the Mathematics Achievement Gaps
+
+# Statistical Text Analysis of U.S. Government Documents regarding the Mathematics Achievement Gaps
+
+* Abstract
+[Submit an abstract of no more than 120 words. Abstracts for accepted sessions will be made publicly available online or in print. You may copy and paste from your word processing program.]
+
+The political discourse on the achievement gaps has been part of the U.S. political discourse since 1983.  Political discourse has been traditionally analyzed qualitatively by choosing from various theoretical frameworks of critical theory. Classical quantitative analysis is less used due to the relative scarcity of numerical data. However, computerized statistical text analysis may be used. By using the tools of text mining one can create tables, network and cluster graphs that are useful in providing representations of the political discourse over time. I have used the text mining library of the popular open source data analysis system, R, to analyze a set of U.S. congressional and executive documents that mention the achievement gaps in mathematics education.
+#######################################################
+
+1. Objectives or purposes
+2. Perspective(s) or theoretical framework
+3. Methods, techniques, or modes of inquiry
+4. Data sources, evidence, objects or materials
+5. Results and/or substantiated conclusions or warrants for arguments/point of view, 6. Scientific or scholarly significance of the study or work
+
+1. Objective
+
+The objective of this investigation is to perform a discourse analysis of the documents produced by the legislative and executive branches of the U.S. government on the subject of the achievement gaps in mathematics education.  The achievement gaps in mathematics, as well as science and English language, have been an important part of the public discourse at the national level since the publication of "A Nation at Risk" in 1983 by the National Commission on Excellence in Education.  This study is part of a larger investigation on the mathematics achievement gaps that avails itself of several critical and post-structural approaches.
+
+2. Perspective
+
+Educational policy research is primarily a qualitative and theoretical endeavor. One of the reasons that quantitative investigations in policy are rare is that most of the data that are available are in the form of text, either printed or electronic.  Anyone who aims to perform quantitative analyzes of text is faced with the difficult task of assigning numerical values to these documents or to restrict oneself to the comparatively limited amount of numerical data available. Almost all available policy data is in the form of text, making the statistical analysis of text the only type that can be performed on native texts without the cumbersome conversion into numerical data. However, recently a new approach has arisen for the quantitative analysis of texts called "text mining" (see e.g. Monroe, 2008).  At the same time a large amount of governmental documents have been made available in electronic form online or otherwise distributed, which is another requisite for computerized analysis.
+
+Research in educational policy would benefit from this computerized analysis of documents just as it has been beneficial in non education contexts. Among the advantages are the capacity of analyzing large amounts of text and the automation of the analysis. Human judgement, distraction, mistakes, and biases do not play a part in the coding and extraction of information. However, human input is still crucial because the researcher will select the collection of texts and develop lists of terms or combination of terms to search for or to exclude.
+
+Thus, text mining is the application of statistical procedures on text instead of on numbers as is usually done in quantitative research. As we have noted, the majority of information is present, be it in printed or electronic, as text rather than as numbers.  Hence the great importance of being able to tap into this resource using automated procedures. Among these procedures the most common are "count-based evaluation", "term correlations", "simple text clustering", "hierarchical clustering", "trend analysis", and "text classification. One can consult Feinerer (2008a), Feinerer (2008b), and  Feinerer (2008c) for an explanation of these terms as well as for examples of these types of analyzes.
+
+
+3. Methods
+
+The software application chosen for this project is the "R" analysis system (http://www.r-project.org) complemented with the text-mining extension "tm" (http://tm.r-forge.r-project.org/, Feinerer, 2010).  This choice was made based on ideological as well as practical reasons.  R and tm are open source, multi-platform, and actively developed by researchers and statisticians world wide. The software is very popular among academics especially those in statistics, mathematics, and the experimental sciences.  However, it is less popular in the social sciences and humanities.
+
+The research project analyzed documents from the U.S. Congress (bills and hearings) and U.S. Executive (presidential speeches and department of education documents) for references to the achievement gap in mathematics education. The downloaded documents were converted from their native pdf and html formats into plain text. The plain text documents were then imported into the text mining application to create what is called in text mining a corpus. The text in the corpus was then pre-processed by stripping of white spaces, conversion into lower case, removal of punctuation, numbers and 'low-content' words, stemming, and synonym reduction. The statistical analysis proper starts with the creation of a term-document matrix that represents the frequency of the filtered terms in the corpus of documents. Out of this large matrix we selected the most frequent terms, a sub-matrix of terms of interest to the investigation (education, math, achievement, funding, TIMSS, PISA), and found association metrics of those terms to others in the matrix.  We then can present these results in tabular and graphical form as network graphs and cluster diagrams, also called dendrograms. We also constructed cluster diagrams of the documents themselves.
+
+For computationally intensive tasks we used "Brazos" a major computing cluster (HPC) at Texas A&M University. The Brazos is a cluster of 126 Dell PowerEdge 1950 1U servers and runs the Linux operating system. It supports several scientific and mathematical programs, among which "R".
+
+4. Data sources
+
+We obtained the governmental documents by running a search a search on the Federal Digital System (FDSys, http://www.gpo.gov/fdsys), the online repository of government documents, for the terms "achievement gap", "math", "education", and "funding". The following table summarizes the selected documents
+
+| Type                    | Results |
+|-------------------------+---------|
+| Committee hearings      |     212 |
+| Congressional bills     |      61 |
+| Presidential documents  |     127 |
+| Congressional documents |       2 |
+| U.S. Dept. Education    |      37 |
+
+
+5. Results
+
+At this point of the investigation we only have partial results. Here we present the outcome of the analyzes of the Congressional Hearings and Bills. The following listing provides the most frequent terms in the corpus of Congressional Hearings
+
+  [1] "able"           "academic"       "access"         "accountability"
+  [5] "achievement"    "act"            "actually"       "additional"    
+  [9] "address"        "american"       "assessment"     "available"     
+ [13] "based"          "believe"        "budget"         "care"          
+ [17] "center"         "chairman"       "charter"        "child"         
+ [21] "children"       "classroom"      "college"        "committee"     
+ [25] "communities"    "community"      "congress"       "continue"      
+ [29] "country"        "data"           "department"     "development"   
+ [33] "district"       "districts"      "dont"           "education"     
+ [37] "educational"    "effective"      "efforts"        "ensure"        
+ [41] "example"        "families"       "federal"        "focus"         
+ [45] "funding"        "funds"          "government"     "grade"         
+ [49] "health"         "hearing"        "help"           "improve"       
+ [53] "including"      "increase"       "information"    "issue"         
+ [57] "issues"         "job"            "kids"           "labor"         
+ [61] "language"       "law"            "learning"       "left"          
+ [65] "level"          "literacy"       "local"          "look"          
+ [69] "lot"            "math"           "meet"           "miller"        
+ [73] "million"        "money"          "national"       "nclb"          
+ [77] "opportunity"    "parents"        "people"         "percent"       
+ [81] "performance"    "policy"         "prepared"       "president"     
+ [85] "process"        "professional"   "program"        "programs"      
+ [89] "progress"       "provide"        "public"         "quality"       
+ [93] "question"       "questions"      "reading"        "research"      
+ [97] "resources"      "school"         "schools"        "science"       
+[101] "secretary"      "senator"        "service"        "services"      
+[105] "skills"         "special"        "staff"          "standards"     
+[109] "start"          "statement"      "student"        "students"      
+[113] "success"        "support"        "system"         "systems"       
+[117] "teacher"        "teachers"       "teaching"       "technology"    
+[121] "thank"          "tiff"           "time"           "title"         
+[125] "training"       "university"     "workforce"
+
+The following is a listing of the words with whom the term "achievement" is closest associated. The number provides an indication of 'closeness'
+
+   achievement accountability      educators       progress     proficient 
+          1.00           0.86           0.86           0.86           0.85 
+   assessments      districts    improvement          gains           nclb 
+          0.84           0.84           0.84           0.83           0.83 
+  standardized       multiple     provisions         yearly       academic 
+          0.83           0.82           0.82           0.82           0.81 
+   accountable         scores 
+          0.81           0.81 
+
+Here is the same type of representation for the term "gap"
+
+        gap     closing        hold        poor     raising       gains 
+       1.00        0.69        0.64        0.62        0.61        0.60 
+      close     failure achievement fundamental       urban accountable 
+       0.59        0.59        0.58        0.57        0.57        0.56 
+       fair  graduation      notion 
+       0.55        0.55        0.55
+
+and the term "math"
+
+       math     mathematics         science         courses        advanced 
+       1.00            0.77            0.75            0.74            0.71 
+     fields         passing         careers         academy            pace 
+       0.70            0.69            0.57            0.56            0.52 
+   rigorous          master competitiveness       placement         solving 
+       0.52            0.51            0.48            0.48            0.48 
+  countries            phil          global      curriculum          pursue 
+       0.45            0.45            0.44            0.43            0.43 
+   teaching         content    professional 
+       0.42            0.41            0.41 
+
+What follows is the listing of the most frequent terms in the corpus of Congressional Bills
+
+  [1] "academic"       "accordance"     "achievement"    "act"           
+  [5] "activities"     "additional"     "administrative" "agencies"      
+  [9] "agency"         "amended"        "amount"         "application"   
+ [13] "applications"   "appropriate"    "appropriated"   "assessment"    
+ [17] "assessments"    "assistance"     "authorized"     "available"     
+ [21] "award"          "based"          "basis"          "board"         
+ [25] "bureau"         "carry"          "carrying"       "center"        
+ [29] "child"          "children"       "community"      "content"       
+ [33] "contract"       "data"           "date"           "described"     
+ [37] "description"    "determined"     "development"    "education"     
+ [41] "educational"    "effective"      "elementary"     "eligible"      
+ [45] "enactment"      "english"        "ensure"         "entity"        
+ [49] "established"    "evaluation"     "extent"         "families"      
+ [53] "federal"        "fiscal"         "following"      "follows"       
+ [57] "funded"         "funds"          "goals"          "grant"         
+ [61] "grants"         "health"         "iii"            "improve"       
+ [65] "improvement"    "include"        "including"      "indian"        
+ [69] "individual"     "individuals"    "information"    "inserting"     
+ [73] "institution"    "institutions"   "instruction"    "language"      
+ [77] "law"            "learning"       "limited"        "local"         
+ [81] "means"          "meet"           "national"       "native"        
+ [85] "organization"   "organizations"  "paragraph"      "parents"       
+ [89] "percent"        "performance"    "period"         "personnel"     
+ [93] "plan"           "private"        "professional"   "proficient"    
+ [97] "program"        "programs"       "progress"       "provide"       
+[101] "provided"       "providing"      "provision"      "provisions"    
+[105] "public"         "purpose"        "purposes"       "qualified"     
+[109] "quality"        "reading"        "receive"        "received"      
+[113] "receiving"      "report"         "require"        "required"      
+[117] "requirements"   "research"       "respect"        "review"        
+[121] "school"         "schools"        "sec"            "secondary"     
+[125] "secretary"      "section"        "served"         "services"      
+[129] "special"        "standards"      "striking"       "student"       
+[133] "students"       "submit"         "subparagraph"   "subpart"       
+[137] "subsection"     "support"        "teacher"        "teachers"      
+[141] "teaching"       "technical"      "technology"     "term"          
+[145] "time"           "title"          "training"       "united"        
+[149] "usc"            "youth"         
+
+
+Below is an association listing for the term "achievement" in the Congressional Bills
+
+ achievement     academic     subgrant  flexibility    subgrants      reading 
+        1.00         0.96         0.94         0.91         0.91         0.90 
+     subpart    assisting        based      reserve  approvalthe  instruction 
+        0.90         0.89         0.89         0.89         0.88         0.88 
+participants  assessments    assurance       entity  generalfrom   measurable 
+        0.88         0.87         0.87         0.87         0.87         0.87 
+    parental  percentages        scope       inform      renewal     selected 
+        0.87         0.87         0.87         0.86         0.86         0.86 
+  disapprove   principles 
+        0.85         0.85 
+
+More of these listings and tables will be available as well as cluster dendrograms of documents and terms as well as correlation plots for all the categories of data sources.
+
+
+6. Significance of the study
+
+The results that we present are at this point of the investigation mostly descriptive. However, we believe that this type of quantitative analysis of policy documents can inform and support the qualitative analysis of educational policy. The advantage is that text mining is completely independent and orthogonal to any type of qualitative analysis. Thus, it allows us to obtain a distinct and separate view of the data that is almost completely uninfluenced by our biases and theoretical positions.  Hence we conclude that text-mining can complement qualitative analysis of policy documents and is relevant in the study of the political discourse on the mathematics achievement gap.
+
+########################################################
+
+* Descriptors
+- Achievement Gap
+- Equity 
+- Mathematics education
+
+* Research Method
+Please select the method that best describes your session.
+- Conceptual/Theoretical
+- Mixed Method
+- Qualitative
+- <Quantitative>
+
